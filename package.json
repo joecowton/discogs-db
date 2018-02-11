@@ -2,9 +2,9 @@
   "name": "discogs-db",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon --exec 'node index.js'",
+    "start": "nodemon --exec 'node app.js'",
     "test": "NODE_ENV=test nodemon --exec 'mocha --timeout 10000'"
   },
   "keywords": [],
