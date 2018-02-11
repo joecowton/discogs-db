@@ -1,6 +1,6 @@
 const assert = require('assert');
 const request = require('supertest');
-const app = require('express');
+const app = require('../../index');
 const mongoose = require('mongoose');
 
 describe("Homepage", () => {

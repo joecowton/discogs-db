@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec 'node index.js'",
-    "test": "NODE_ENV=test nodemon --exec 'mocha'"
+    "test": "NODE_ENV=test nodemon --exec 'mocha --timeout 10000'"
   },
   "keywords": [],
   "author": "",
