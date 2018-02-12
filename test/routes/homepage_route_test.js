@@ -1,7 +1,7 @@
 const assert = require('assert');
 const mongoose = require('mongoose');
 const request = require('supertest');
-const app = require('../../app');
+const app = require('../../app/app');
 
 describe("Homepage", () => {
   it("GET request to '/api' returns welcome message", (done) => {

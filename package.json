@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app/app.js",
+    "start": "nodemon --exec 'node app/app.js'",
     "test": "NODE_ENV=test nodemon --exec 'mocha --timeout 10000'"
   },
   "keywords": [],
