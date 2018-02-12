@@ -16,6 +16,8 @@
     "mocha": "^5.0.0",
     "mongoose": "^5.0.4",
     "nodemon": "^1.14.12",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "supertest": "^3.0.0"
   }
 }

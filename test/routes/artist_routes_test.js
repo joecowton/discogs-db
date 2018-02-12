@@ -4,15 +4,6 @@ const request = require('supertest');
 const app = require('../../app');
 const Artist = mongoose.model('artists');
 
-// describe('Log artists', () => {
-//   it('logs an artist', () => {
-//     const artist = new Artist({ name: 'RZA' })
-//     artist.save()
-//       .then((artist) => console.log(artist))
-//
-//   })
-// })
-
 describe('Artist routes', () => {
   it('GET request to /api/artists gets all the artist', (done) => {
   const artist = new Artist({ name: 'Kula Shaker' })
