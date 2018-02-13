@@ -27,6 +27,7 @@ app.use((err, req, res, next) => {
 });
 
 require('./routes/auth_routes')(app);
+require('./routes/billing_routes')(app)
 require('./routes/index')(app);
 
 app.listen(PORT)
