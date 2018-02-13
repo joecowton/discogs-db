@@ -8,6 +8,7 @@
     "server": "nodemon app/app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
     "test": "NODE_ENV=test nodemon --exec 'mocha --timeout 10000'"
   },
   "keywords": [],
