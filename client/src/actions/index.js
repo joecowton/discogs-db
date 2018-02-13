@@ -2,7 +2,8 @@ import axios from 'axios';
 import { FETCH_USER } from './types'
 import { FETCH_DATA } from './types'
 import { FETCH_RELEASE } from './types'
-import Keys from '../config/keys';
+const myKey:'qeIeIQJgvnggcqHasaVV',
+const mySecret:'OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc'
 
 const myKey = Keys.discogsKey;
 const mySecret = Keys.discogsSecret;
