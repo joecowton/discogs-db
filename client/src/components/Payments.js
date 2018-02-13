@@ -3,12 +3,13 @@ import StripeCheckout from 'react-stripe-checkout';
 
 class Payments extends Component {
   render (){
-    debugger;
     return (
       <StripeCheckout
+        name="DISCOGS"
+        description="Pay for something"
         amount={500}
         token={token => console.log(token)}
-        strikeKey={process.env.REACT_APP_STRIPE_KEY}
+        stripeKey={process.env.REACT_APP_STRIPE_KEY}
       />
     );
   }
