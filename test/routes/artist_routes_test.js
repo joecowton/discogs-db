@@ -1,7 +1,7 @@
 const assert = require('assert');
 const mongoose = require('mongoose');
 const request = require('supertest');
-const app = require('../../app/app');
+const app = require('../../app');
 const Artist = mongoose.model('artists');
 
 describe('Artist routes', () => {

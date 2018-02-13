@@ -2,7 +2,7 @@ const assert = require('assert');
 const mongoose = require('mongoose');
 const request = require('supertest');
 const Release = mongoose.model('releases');
-const app = require('../../app/app');
+const app = require('../../app');
 
 describe('Release routes', () => {
   it("GET request to /api/releases returns releases", (done) => {
