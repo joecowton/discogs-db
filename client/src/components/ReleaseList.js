@@ -13,14 +13,14 @@ class ReleaseList extends Component {
 
   renderData(data) {
     return (
-        <ul class="collection">
-          <li class="collection-item avatar">
-            <img src={data.thumb} alt="" class="circle"></img>
-            <span class="title">{data.artist}</span>
+        <ul key={data.id} className="collection">
+          <li className="collection-item avatar">
+            <img src={data.thumb} alt="" className="circle"></img>
+            <span className="title">{data.artist}</span>
             <p>{data.title} <br />
                {data.label}
             </p>
-            <Link to={`/release/${data.id}`} class="secondary-content"><i class="material-icons">View</i></Link>
+            <Link to={`/release/${data.id}`} className="secondary-content"><i className="material-icons">View</i></Link>
           </li>
         </ul>
     )
