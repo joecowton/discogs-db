@@ -1,0 +1,23 @@
+.release-list {
+  display: container-flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 30%;
+  min-width: 300px;
+}
+
+.img {
+  height: 100px;
+  width: 100px;
+}
+
+.container {
+  display: inline-grid;
+}
+
+@-ms-viewport{
+  width: device-width;
+}
