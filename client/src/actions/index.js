@@ -2,12 +2,9 @@ import axios from 'axios';
 import { FETCH_USER } from './types'
 import { FETCH_DATA } from './types'
 import { FETCH_RELEASE } from './types'
-const myKey:'qeIeIQJgvnggcqHasaVV',
-const mySecret:'OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc'
-
-const myKey = Keys.discogsKey;
-const mySecret = Keys.discogsSecret;
-const ROOT_URL = 'https://api.discogs.com'
+const myKey:'qeIeIQJgvnggcqHasaVV';
+const mySecret:'OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc';
+const ROOT_URL = 'https://api.discogs.com';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user')
