@@ -2,6 +2,7 @@ import axios from 'axios';
 import { FETCH_USER } from './types'
 import { FETCH_DATA } from './types'
 import { FETCH_RELEASE } from './types'
+import { FETCH_ARTIST } from './types'
 const myKey ='qeIeIQJgvnggcqHasaVV';
 const mySecret ='OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc';
 const ROOT_URL = 'https://api.discogs.com';
@@ -22,6 +23,13 @@ export const fetchData = () => async dispatch => {
   const res =  await axios.get(`${ROOT_URL}/artists/748051/releases?key=${myKey}&secret=${mySecret}`)
 
   dispatch({ type: FETCH_DATA, payload: res.data })
+}
+
+export const fetchArtist = (artist) => async dispatch => {
+  const res =  await axios.get(`${ROOT_URL}/database/search?q=${artist}&type=artist&key=${myKey}&secret=${mySecret}`)
+  // const response =  await axios.get(`${ROOT_URL}/artists/${res.data.id}/releases?key=${myKey}&secret=${mySecret}`)
+
+  dispatch({ type: FETCH_ARTIST, payload: res.data })
 }
 
 export const fetchRelease = (id) => async dispatch => {

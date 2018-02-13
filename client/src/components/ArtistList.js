@@ -5,8 +5,8 @@ import * as actions from '../actions';
 
 class ReleaseList extends Component {
   componentWillMount() {
-    // this.props.fetchArtist("Kowton");
-    this.props.fetchData();
+    this.props.fetchArtist("Kowton");
+    // this.props.fetchData();
   }
 
   handleClick() {
