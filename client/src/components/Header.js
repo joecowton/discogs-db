@@ -9,11 +9,11 @@ class Header extends Component {
       case null:
         return;
       case false:
-        return <li><a href="/auth/google">Login with Google</a></li>
+        return <li><a href="/auth/google">Login</a></li>
       default:
         return [
           <li key="3" style={{ margin: '0 10px' }}>
-            Logged in as: {this.props.auth.name}
+            {/* Logged in as: {this.props.auth.name} */}
           </li>,
           <li key="2"><a href="/api/logout">Logout</a></li>
       ]
@@ -27,7 +27,7 @@ class Header extends Component {
             <div className="container-fluid" >
               <div className="nav-wrapper">
                 <Link to={this.props.auth ? '/releases/all' : '/' }
-                  className="left brand-logo"
+                  className="centre brand-logo"
                   style={{ margin: '0 10px'}}>
                   LIVITY SOUND
                 </Link>

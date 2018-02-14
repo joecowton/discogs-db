@@ -43,11 +43,11 @@ class ReleaseDetail extends Component {
     const { data } = this.props
       return (
         <li className="list-group-item" key={data.id}>
-          <h1>{this.mapArtists(data)}</h1>
+          {/* <h1>{this.mapArtists(data)}</h1>
           <h2>{data.title}</h2>
-          <p>{this.mapImages(data)}</p>
+          <p>{this.mapImages(data)}</p> */}
           {this.mapVideos(data)}
-          <p><Payments release={data}/></p>
+          {/* <p><Payments release={data}/></p> */}
         </li>
       )
   }
