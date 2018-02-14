@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Router, Link, withRouter  } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Payments from './Payments';
 
 class Header extends Component {
@@ -34,6 +34,15 @@ class Header extends Component {
                 <ul className="right">
                   {this.renderContent()}
                 </ul>
+                <div class="dropdown">
+                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><Link to="/artists/748051">Peverelist</Link></li>
+                      <li><Link to="/artists/1606986">Kowton</Link></li>
+                      <li><Link to="/artists/1451990">Asusu</Link></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </nav>
@@ -47,4 +56,4 @@ function mapStateToProps({ auth }) {
 }
 
 
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

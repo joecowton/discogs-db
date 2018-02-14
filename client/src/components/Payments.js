@@ -5,18 +5,20 @@ import * as actions from '../actions';
 
 class Payments extends Component {
   render (){
-     const { lowest_price } = this.props.amount
-     console.log(lowest_price);
+     const { release } = this.props
+     console.log(release);
+
      return (
       <StripeCheckout
         name="DISCOGS"
-        description={lowest_price}
-        amount={lowest_price}
+        currency="gbp"
+        description={release.title}
+        amount={release.lowest_price * 100}
         token={token => this.props.handleToken(token)}
         stripeKey={process.env.REACT_APP_STRIPE_KEY}
       >
           <button className="btn black">
-            £{lowest_price}
+            £{release.lowest_price}
           </button>
       </StripeCheckout>
     );

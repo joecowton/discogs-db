@@ -47,7 +47,7 @@ class ReleaseDetail extends Component {
           <h2>{data.title}</h2>
           <p>{this.mapImages(data)}</p>
           {this.mapVideos(data)}
-          <p><Payments amount={data}/></p>
+          <p><Payments release={data}/></p>
         </li>
       )
   }
@@ -66,7 +66,7 @@ class ReleaseDetail extends Component {
     return (
       <div>
         <Link to="/releases/all">Back to Index</Link>
-        <ul className="list-group" align="left">
+        <ul className="list-group center">
           {this.renderRelease()}
         </ul>
       </div>

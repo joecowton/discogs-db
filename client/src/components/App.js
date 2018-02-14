@@ -7,6 +7,7 @@ import Header from './Header';
 import Landing from './Landing';
 import ReleaseList from './ReleaseList';
 import ReleaseDetail from './ReleaseDetail';
+import ArtistDetail from './ArtistDetail';
 
 class App extends Component  {
   componentDidMount(){
@@ -18,11 +19,12 @@ class App extends Component  {
       <div className="container">
         <BrowserRouter>
           <div>
-            <Header />
+            <Header location={this.props.location} />
             <Switch>
               <Route exact path="/" component={Landing} />
               <Route path="/releases/all" component={ReleaseList} />
               <Route path="/release/:id" component={ReleaseDetail} />
+              <Route path="/artists/:artist" component={ArtistDetail} />
           </Switch>
           </div>
         </BrowserRouter>
@@ -31,4 +33,4 @@ class App extends Component  {
   }
 };
 
-export default connect(null, actions)(App);
+export default connect(null, actions, null, { pure: false})(App);
