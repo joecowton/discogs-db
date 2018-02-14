@@ -28,7 +28,11 @@ class ReleaseList extends Component {
 
   render () {
     if (!this.props.data.length){
-      return <div>Loading..</div>
+      return (
+        <div className="progress">
+          <div className="indeterminate"></div>
+        </div>
+      )
     }
 
       return(

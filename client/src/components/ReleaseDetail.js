@@ -54,7 +54,11 @@ class ReleaseDetail extends Component {
     const { data } = this.props;
 
     if (!data){
-      return <div>Loading..</div>
+      return (
+        <div className="progress">
+          <div className="indeterminate"></div>
+        </div>
+      )
     }
 
     return (
