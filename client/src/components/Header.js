@@ -27,7 +27,7 @@ class Header extends Component {
             <div className="container-fluid" >
               <div className="nav-wrapper">
                 <Link to={this.props.auth ? '/releases/all' : '/' }
-                  className="centre brand-logo"
+                  className="left brand-logo"
                   style={{ margin: '0 10px'}}>
                   LIVITY SOUND
                 </Link>
