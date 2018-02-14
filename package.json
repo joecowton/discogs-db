@@ -24,8 +24,13 @@
     "nodemon": "^1.14.12",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "postcss": "^6.0.17",
     "react-stripe-checkout": "^2.6.3",
     "stripe": "^5.4.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "webpack": "^3.11.0"
+  },
+  "devDependencies": {
+    "postcss-loader": "^2.1.0"
   }
 }

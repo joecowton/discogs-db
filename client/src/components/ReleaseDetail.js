@@ -4,6 +4,7 @@ import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import { fetchRelease } from '../actions';
 import { connect } from 'react-redux';
+import Payments from './Payments';
 
 class ReleaseDetail extends Component {
   componentDidMount() {
@@ -27,13 +28,13 @@ class ReleaseDetail extends Component {
 
   mapVideos(release){return _.map(release.videos, video => {
       return (
-        <div className="container-fluid">
+        <div className="container" style={{ display: 'inline-grid'}}>
           <div className="row">
             <div className="col-3">
-              <ReactPlayer url={video.uri} height="200" width="200" />
+              <ReactPlayer url={video.uri} height="100" width="100%" />
             </div>
           </div>
-        </div>
+         </div>
       )
     })
   }
@@ -44,8 +45,9 @@ class ReleaseDetail extends Component {
         <li className="list-group-item" key={data.id}>
           <h1>{this.mapArtists(data)}</h1>
           <h2>{data.title}</h2>
-          {this.mapImages(data)}
+          <p>{this.mapImages(data)}</p>
           {this.mapVideos(data)}
+          <p><Payments amount={data}/></p>
         </li>
       )
   }
@@ -55,8 +57,8 @@ class ReleaseDetail extends Component {
 
     if (!data){
       return (
-        <div className="progress">
-          <div className="indeterminate"></div>
+        <div className="progress white">
+          <div className="indeterminate green"></div>
         </div>
       )
     }
@@ -64,7 +66,7 @@ class ReleaseDetail extends Component {
     return (
       <div>
         <Link to="/releases/all">Back to Index</Link>
-        <ul className="list-group">
+        <ul className="list-group" align="left">
           {this.renderRelease()}
         </ul>
       </div>
