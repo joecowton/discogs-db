@@ -28,9 +28,10 @@ export const fetchData = () => async dispatch => {
   dispatch({ type: FETCH_DATA, payload: res.data })
 }
 
-export const fetchArtist = (artistId) => async dispatch => {
+export const fetchArtist = (artist) => async dispatch => {
   // const res =  await axios.get(`${ROOT_URL}/artists/${artist}/releases?key=${myKey}&secret=${mySecret}`)
-  const res = await axios.get(`/api/releases/${artistId}`)
+  const res = await axios.get(`/api/releases/${artist}`)
+
   dispatch({ type: FETCH_ARTIST, payload: res.data })
 }
 

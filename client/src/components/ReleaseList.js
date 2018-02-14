@@ -38,7 +38,24 @@ class ReleaseList extends Component {
     }
     return(
       <div>
-        <button className="btn btn-danger" onClick={()=> this.props.fetchArtist(1)}>Kowton</button>
+        <div class="dropdown center">
+          <button class="btn btn-secondary btn-lg btn-block dropdown-toggle black" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ARTIST SELECTION
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Kowton')}>Kowton</a>
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Pev*')}>Peverelist</a>
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Asusu')}>Asusu</a>
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Hodge')}>Hodge</a>
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Simo Cell')}>Simo Cell</a>
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Forest')}>FDW</a>
+            <a class="dropdown-item" onClick={()=> this.props.fetchArtist('Various')}>Various</a>
+          </div>
+        </div>
+
+
+
+
 
         {/* <SearchBar onSearchTermChange={this.selectArtist = this.selectArtist.bind(this)} /> */}
         <div className="release-list">

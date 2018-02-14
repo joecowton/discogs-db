@@ -13,9 +13,11 @@ class Header extends Component {
       default:
         return [
           <li key="3" style={{ margin: '0 10px' }}>
-            Logged in as: {this.props.auth.name}
           </li>,
-          <li key="2"><a href="/api/logout">Logout</a></li>
+          <li key="2"><a href="/api/logout">
+          <span class="navbar-text">
+            Logout
+          </span></a></li>
       ]
     }
   }
@@ -28,7 +30,9 @@ class Header extends Component {
               <div className="navbar-logo ">
                 <Link to={this.props.auth ? '/releases/all' : '/' }
                   className="left brand-logo" style={{}}>
-                  <a>Livity Sound</a>
+                  <span class="navbar-text center">
+                    LIVITY SOUND
+                  </span>
                 </Link>
                 <ul className="right">
                   {this.renderContent()}

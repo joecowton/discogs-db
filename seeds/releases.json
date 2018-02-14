@@ -8,7 +8,6 @@
 "catno": "Livity 001",
 "year": 2011,
 "resource_url": "https://api.discogs.com/releases/2939256",
-"artist_id": 1,
 "artist": "Pev* & Kowton",
 "id": 2939256
 },
@@ -21,8 +20,6 @@
 "year": 2012,
 "resource_url": "https://api.discogs.com/releases/3433399",
 "artist": "Pev* & Kowton",
-"artist_id": 1,
-
 "id": 3433399
 },
 {
@@ -34,8 +31,6 @@
 "year": 2011,
 "resource_url": "https://api.discogs.com/releases/3127874",
 "artist": "Asusu",
-"artist_id": 1,
-
 "id": 3127874
 },
 {
@@ -304,28 +299,6 @@
 },
 {
 "status": "Accepted",
-"thumb": "https://img.discogs.com/NiFtu19hSsLmXFnYCQ6YnHDL2Us=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8415841-1461169509-4269.jpeg.jpg",
-"title": "Utility",
-"format": "2x12\", Album",
-"catno": "LIVITY019",
-"year": 2016,
-"resource_url": "https://api.discogs.com/releases/8415841",
-"artist": "Kowton",
-"id": 8415841
-},
-{
-"status": "Accepted",
-"thumb": "https://img.discogs.com/KCbjBHdPHfq3y1Ycw_lSzaZGjIU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9118418-1475087479-5072.jpeg.jpg",
-"title": "Utility",
-"format": "9xFile, MP3, Album, 320",
-"catno": "LIVITY019",
-"year": 2016,
-"resource_url": "https://api.discogs.com/releases/9118418",
-"artist": "Kowton",
-"id": 9118418
-},
-{
-"status": "Accepted",
 "thumb": "https://img.discogs.com/an-vqEdCyJKpqDDG29T_kUkX6BQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-8362724-1460137033-6384.jpeg.jpg",
 "title": "Utility",
 "format": "2x12\", Album, Ltd, Yel",
@@ -378,28 +351,6 @@
 "resource_url": "https://api.discogs.com/releases/10395915",
 "artist": "Peverelist",
 "id": 10395915
-},
-{
-"status": "Accepted",
-"thumb": "https://img.discogs.com/evt1mwlcFpZZrp9oPemho2rPHmM=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10366164-1496073222-6851.jpeg.jpg",
-"title": "Tessellations",
-"format": "9xFile, MP3, Album, 320",
-"catno": "LIVITY024",
-"year": 2017,
-"resource_url": "https://api.discogs.com/releases/10366164",
-"artist": "Peverelist",
-"id": 10366164
-},
-{
-"status": "Accepted",
-"thumb": "https://img.discogs.com/EISR_88iiAqrdmB0S6riAVAw9aU=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-10374955-1496226674-2196.jpeg.jpg",
-"title": "Tessellations",
-"format": "CD, Album",
-"catno": "LIVITY024CD",
-"year": 2017,
-"resource_url": "https://api.discogs.com/releases/10374955",
-"artist": "Peverelist",
-"id": 10374955
 },
 {
 "status": "Accepted",
@@ -469,17 +420,6 @@
 },
 {
 "status": "Accepted",
-"thumb": "https://img.discogs.com/CaPkgkpkDuKIsoLyZB-nnWFTbhE=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5032858-1382657197-4153.jpeg.jpg",
-"title": "Livity Sound",
-"format": "18xFile, FLAC, Comp",
-"catno": "LIVITYCD001D",
-"year": 2013,
-"resource_url": "https://api.discogs.com/releases/5032858",
-"artist": "Various",
-"id": 5032858
-},
-{
-"status": "Accepted",
 "thumb": "https://img.discogs.com/cIkNc0dq6kUZw8mYGkbcV9wZYZw=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5021113-1382349436-2015.jpeg.jpg",
 "title": "Livity Sound",
 "format": "18xFile, Comp, MP3, 320",
@@ -510,16 +450,5 @@
 "resource_url": "https://api.discogs.com/releases/7829718",
 "artist": "Various",
 "id": 7829718
-},
-{
-"status": "Accepted",
-"thumb": "https://img.discogs.com/g5tSOP1PrJWc8ZnUsvzTc-EPSxQ=/fit-in/150x150/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-9355939-1479292316-2672.jpeg.jpg",
-"title": "Utility",
-"format": "CDr, Album",
-"catno": "none",
-"year": 2016,
-"resource_url": "https://api.discogs.com/releases/9355939",
-"artist": "Kowton",
-"id": 9355939
 }
 ]

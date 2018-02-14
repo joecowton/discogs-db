@@ -8,11 +8,9 @@ const ReleaseSchema = new Schema({
   catno: String,
   year: Number,
   resource_url: String,
+  artistId : Number,
   id: Number,
-  artists: [{
-    type: Schema.Types.ObjectId,
-    ref: 'artists'
-  }]
+  artist: String 
 })
 
 const Release = mongoose.model('releases', ReleaseSchema)
