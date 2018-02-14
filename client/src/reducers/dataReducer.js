@@ -5,7 +5,7 @@ import { FETCH_ARTIST } from '../actions/types'
 export default function(state = [], action) {
   switch (action.type) {
     case FETCH_DATA:
-      return [...state, ...action.payload.releases ]
+      return [...state, ...action.payload ]
     case FETCH_ARTIST:
       return  [...state, ...action.payload.releases ]
     case FETCH_RELEASE:

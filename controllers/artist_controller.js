@@ -2,7 +2,6 @@ const Artist = require('../models/artist_model')
 
 module.exports = {
   create(req, res, next) {
-    console.log(req.body);
     Artist.create(req.body)
       .then(
         artist => {

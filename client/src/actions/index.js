@@ -5,7 +5,10 @@ import { FETCH_RELEASE } from './types'
 import { FETCH_ARTIST } from './types'
 const myKey ='qeIeIQJgvnggcqHasaVV';
 const mySecret ='OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc';
+
+
 const ROOT_URL = 'https://api.discogs.com';
+
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user')
@@ -20,8 +23,8 @@ export const handleToken = (token) => async dispatch => {
 }
 
 export const fetchData = () => async dispatch => {
-  const res =  await axios.get(`${ROOT_URL}/labels/251117/releases?key=${myKey}&secret=${mySecret}`)
-
+  // const res =  await axios.get(`${ROOT_URL}/labels/251117/releases?key=${myKey}&secret=${mySecret}`)
+  const res = await axios.get('/api/releases')
   dispatch({ type: FETCH_DATA, payload: res.data })
 }
 

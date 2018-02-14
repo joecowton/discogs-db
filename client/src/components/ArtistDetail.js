@@ -12,14 +12,6 @@ class ArtistDetail extends Component {
     this.props.fetchArtist(artist);
   }
 
-  componentDidUpdate (prevProps) {
-  console.log(prevProps);
-    let oldId = prevProps.match.params.artist
-    let newId = this.props.match.params.artist
-    if (newId !== oldId)
-      this.props.fetchArtist(this.props.match.params.artist)
-  }
-
   mapImages(release) {
     return _.map(release.images, image => {
       return <image
@@ -89,4 +81,4 @@ function mapStateToProps(state) {
   return { data: state.data }
 }
 
-export default withRouter(connect(mapStateToProps, { fetchArtist })(ArtistDetail));
+export default connect(mapStateToProps, { fetchArtist })(ArtistDetail);

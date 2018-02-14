@@ -4,6 +4,7 @@ const { Schema } = mongoose;
 const ReleaseSchema = new Schema({
   title: String,
   format: String,
+  thumb: String,
   catno: String,
   year: Number,
   resource_url: String,
