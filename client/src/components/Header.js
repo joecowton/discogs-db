@@ -13,7 +13,7 @@ class Header extends Component {
       default:
         return [
           <li key="3" style={{ margin: '0 10px' }}>
-            {/* Logged in as: {this.props.auth.name} */}
+            Logged in as: {this.props.auth.name}
           </li>,
           <li key="2"><a href="/api/logout">Logout</a></li>
       ]
@@ -23,13 +23,12 @@ class Header extends Component {
   render() {
     return (
       <div>
-          <nav className="navbar navbar-inverse">
+          <nav className="navbar navbar-inverse ">
             <div className="container-fluid" >
-              <div className="nav-wrapper">
+              <div className="navbar-logo ">
                 <Link to={this.props.auth ? '/releases/all' : '/' }
-                  className="left brand-logo"
-                  style={{ margin: '0 10px'}}>
-                  LIVITY SOUND
+                  className="left brand-logo" style={{}}>
+                  <a>Livity Sound</a>
                 </Link>
                 <ul className="right">
                   {this.renderContent()}

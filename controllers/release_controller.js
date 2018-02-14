@@ -11,5 +11,13 @@ module.exports = {
     Release.find({})
       .then(releases => res.status(200).json(releases))
       .catch(next);
+  },
+
+  showArtist (req, res, next) {
+    const artist = req.params
+
+    Release.find({ artist_id: req.params })
+      .then(releases => res.status(200).json(releases))
+      .catch(next);
     }
 }

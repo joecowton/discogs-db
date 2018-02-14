@@ -7,7 +7,8 @@ export default function(state = [], action) {
     case FETCH_DATA:
       return [...state, ...action.payload ]
     case FETCH_ARTIST:
-      return  [...state, ...action.payload.releases ]
+    console.log(action);
+      return  action.payload
     case FETCH_RELEASE:
       return { ...state, [action.payload.data.id]: action.payload.data};
     default:

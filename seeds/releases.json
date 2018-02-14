@@ -8,6 +8,7 @@
 "catno": "Livity 001",
 "year": 2011,
 "resource_url": "https://api.discogs.com/releases/2939256",
+"artist_id": 1,
 "artist": "Pev* & Kowton",
 "id": 2939256
 },
@@ -20,6 +21,8 @@
 "year": 2012,
 "resource_url": "https://api.discogs.com/releases/3433399",
 "artist": "Pev* & Kowton",
+"artist_id": 1,
+
 "id": 3433399
 },
 {
@@ -31,6 +34,8 @@
 "year": 2011,
 "resource_url": "https://api.discogs.com/releases/3127874",
 "artist": "Asusu",
+"artist_id": 1,
+
 "id": 3127874
 },
 {
