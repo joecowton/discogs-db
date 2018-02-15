@@ -17,4 +17,17 @@ describe('Release routes', () => {
         done();
     })
   })
+
+  it("POST request to /api/releases returns releases", (done) => {
+    const release = new Release({ title: 'Whatever' })
+
+    release.save().then(() => {
+      request(app)
+        .get('/api/releases')
+        .end((err, res) => {
+          assert(res.body[0].title === 'Whatever')
+        })
+        done();
+    })
+  })
 })

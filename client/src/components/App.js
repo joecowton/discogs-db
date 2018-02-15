@@ -27,7 +27,7 @@ class App extends Component  {
               <Route path="/releases/new" component={ReleaseNew} />
               <Route path="/releases/:id" component={ReleaseDetail} />
               <Route path="/artists/:artist" component={ArtistDetail} />
-          </Switch>
+            </Switch>
           </div>
         </BrowserRouter>
       </div>

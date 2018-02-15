@@ -13,6 +13,7 @@ module.exports = {
       .then(releases => res.status(200).json(releases))
       .catch(next);
   },
+
   showDetail (req, res, next) {
     Release.findOne({ id: req.params.releaseId  })
       .then(releases => res.status(200).json(releases))
@@ -21,6 +22,7 @@ module.exports = {
 
   showArtist (req, res, next) {
     const artist = req.params.artist
+    
     Release.find({ artist: { "$regex": artist, "$options": "i" } })
       .then(releases => res.status(200).json(releases))
       .catch(next);
