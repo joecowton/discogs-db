@@ -14,7 +14,6 @@ module.exports = {
       .catch(next);
   },
   showDetail (req, res, next) {
-    console.log(req.params);
     Release.findOne({ id: req.params.releaseId  })
       .then(releases => res.status(200).json(releases))
       .catch(next);
@@ -22,7 +21,6 @@ module.exports = {
 
   showArtist (req, res, next) {
     const artist = req.params.artist
-    console.log(artist);
     Release.find({ artist: { "$regex": artist, "$options": "i" } })
       .then(releases => res.status(200).json(releases))
       .catch(next);

@@ -23,13 +23,12 @@ export const handleToken = (token) => async dispatch => {
 }
 
 export const fetchData = () => async dispatch => {
-  // const res =  await axios.get(`${ROOT_URL}/labels/251117/releases?key=${myKey}&secret=${mySecret}`)
   const res = await axios.get('/api/releases/')
+  
   dispatch({ type: FETCH_DATA, payload: res.data })
 }
 
 export const fetchArtist = (artist) => async dispatch => {
-  // const res =  await axios.get(`${ROOT_URL}/artists/${artist}/releases?key=${myKey}&secret=${mySecret}`)
   const res = await axios.get(`/api/releases/${artist}`)
 
   dispatch({ type: FETCH_ARTIST, payload: res.data })
@@ -37,7 +36,7 @@ export const fetchArtist = (artist) => async dispatch => {
 
 export const fetchRelease = (id) => async dispatch => {
   const res = await axios.get(`${ROOT_URL}/releases/${id}?key=${myKey}&secret=${mySecret}`);
-  // const res = await axios.get(`/api/releases/detail/${id}`)
+
   dispatch({ type: FETCH_RELEASE, payload: res })
 }
 

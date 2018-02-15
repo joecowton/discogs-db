@@ -11,10 +11,8 @@ class Header extends Component {
         return <li><a href="/auth/google">Login</a></li>
       default:
         return [
-          <div key="4">
+          <div key="3">
             <li key="1"><Link to={this.props.auth ? '/releases/new' : '/' }>Add New</Link></li>
-            <li key="3" style={{ margin: '0 0px' }}>
-            </li>
             <li key="2"><a href="/api/logout">Logout</a></li>
         </div>
       ]
@@ -44,6 +42,5 @@ class Header extends Component {
 function mapStateToProps({ auth }) {
   return { auth }
 }
-
 
 export default connect(mapStateToProps)(Header);

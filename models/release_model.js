@@ -8,7 +8,7 @@ const ReleaseSchema = new Schema({
   thumb: String,
   catno: String,
   year: Number,
-  videos: [VideoSchema],
+  videos: [String],
   resource_url: String,
   id: Number,
   artist: String

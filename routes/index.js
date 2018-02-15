@@ -12,11 +12,8 @@ module.exports = (app) => {
   app.get('/api/releases/detail/:releaseId', ReleaseController.showDetail)
   app.get('/api/releases/:artist', ReleaseController.showArtist)
 
-
-
   app.post('/api/releases', requireLogin, (req, res, next) => {
     const { title, artist, thumb, catno, format, resource_url, video } = req.body;
-    console.log(video.split(',').map(video => ({video})));
     Release.create({
       title,
       artist,
@@ -24,9 +21,8 @@ module.exports = (app) => {
       catno,
       format,
       resource_url,
-      videos: video.split(',').map(video => ({video}))
+      videos: video.split(',')
     })
-      .populate('videos')
       .then(release => res.status(200).json(release))
       .catch(next)
   })
