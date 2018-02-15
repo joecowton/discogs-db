@@ -8,17 +8,21 @@ const FIELDS = [
   { label: 'Title', name: 'title' },
   { label: 'Artist', name: 'artist' },
   { label: 'Image Link', name: 'thumb' },
-  { label: 'Cat Number', name: 'catno' },
+  { label: 'Cat. Number', name: 'catno' },
   { label: 'Format', name: 'format' },
   { label: 'Discogs Link', name: 'resource_url' },
-  { label: 'ID', name: 'id' }
 ]
 
 class ReleaseForm extends Component {
   renderFields() {
     return _.map(FIELDS, ({ label, name }) => {
       return (
-        <Field component={ReleaseField} type="text" label={label} name={name} />
+        <Field
+          key={name}
+          component={ReleaseField}
+          type="text"
+          label={label}
+          name={name} />
       )
     })
   }
@@ -27,7 +31,7 @@ class ReleaseForm extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <form onSubmit={this.props.handleSubmit(this.props.onReleaseSubmit)}>
           {this.renderFields()}
           <Link to="/releases/all" className="black btn-flat white-text">
             Exit
@@ -41,6 +45,19 @@ class ReleaseForm extends Component {
   }
 }
 
+function validate(values) {
+  const errors = {};
+
+  _.each(FIELDS, ({ name }) => {
+    if (!values[name]) {
+      errors[name] = 'You must provide a value'
+    }
+  })
+
+  return errors;
+}
+
 export default reduxForm({
+  validate,
   form: 'ReleaseForm'
 })(ReleaseForm);
