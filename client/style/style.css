@@ -15,3 +15,7 @@
   flex-wrap: wrap;
   display: inline-grid;
 }
+
+.navbar-logo {
+  color: red;
+}

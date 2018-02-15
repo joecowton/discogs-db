@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 import { Link, withRouter  } from 'react-router-dom';
 import { fetchArtist } from '../actions';
-import Payments from './Payments';
 import { connect } from 'react-redux';
+import Payments from './tools/Payments';
 
 class ArtistDetail extends Component {
   componentWillMount() {

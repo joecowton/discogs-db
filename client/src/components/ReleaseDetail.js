@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 import { Link } from 'react-router-dom';
 import { fetchRelease } from '../actions';
 import { connect } from 'react-redux';
-import Payments from './Payments';
+import Payments from './tools/Payments';
 
 class ReleaseDetail extends Component {
   componentDidMount() {
