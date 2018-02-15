@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import ReleaseField from './ReleaseField';
-import formFields from './formFields'
+import formFields from './formFields';
+import validateLinks from '../../utils/validateLinks'
 
 
 class ReleaseForm extends Component {
@@ -19,7 +20,6 @@ class ReleaseForm extends Component {
       )
     })
   }
-
 
   render() {
     return (
@@ -40,6 +40,8 @@ class ReleaseForm extends Component {
 
 function validate(values) {
   const errors = {};
+
+  errors.videos = validateLinks(values.videos || '');
 
   _.each(formFields, ({ name }) => {
     if (!values[name]) {

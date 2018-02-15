@@ -6,7 +6,7 @@ import * as actions from '../actions'
 import Header from './Header';
 import Landing from './Landing';
 import ReleaseList from './ReleaseList';
-import ReleaseNew from './ReleaseNew';
+import ReleaseNew from './releaseForm/ReleaseNew';
 import ReleaseDetail from './ReleaseDetail';
 import ArtistDetail from './ArtistDetail';
 

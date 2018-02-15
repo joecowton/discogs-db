@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const VideoSchema = require('./video_schema')
 const { Schema } = mongoose;
 
 const ReleaseSchema = new Schema({
@@ -7,10 +8,10 @@ const ReleaseSchema = new Schema({
   thumb: String,
   catno: String,
   year: Number,
+  videos: [VideoSchema],
   resource_url: String,
-  artistId : Number,
   id: Number,
-  artist: String 
+  artist: String
 })
 
 const Release = mongoose.model('releases', ReleaseSchema)

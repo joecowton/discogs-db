@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../actions';
-import SearchBar from './tools/SearchBar';
 
 class ReleaseList extends Component {
   componentWillMount() {
@@ -13,7 +12,6 @@ class ReleaseList extends Component {
     return (
       <ul  className="collection">
         <li className="collection-item avatar">
-
           <Link to={`/releases/${data.id}`}>
             <img src={data.thumb} alt="" className="circle"></img>
           </Link>
@@ -25,8 +23,6 @@ class ReleaseList extends Component {
       </ul>
     )
   }
-
-
 
   render () {
     if (!this.props.data.length || !this.props.data){

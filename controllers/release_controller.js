@@ -1,4 +1,5 @@
 const Release = require('../models/release_model')
+const requireLogin = require('../middlewares/require-login')
 
 module.exports = {
   create(req, res, next) {
@@ -8,7 +9,13 @@ module.exports = {
   },
 
   show (req, res, next) {
-    Release.find({})
+    Release.find({ })
+      .then(releases => res.status(200).json(releases))
+      .catch(next);
+  },
+  showDetail (req, res, next) {
+    console.log(req.params);
+    Release.findOne({ id: req.params.releaseId  })
       .then(releases => res.status(200).json(releases))
       .catch(next);
   },
@@ -20,4 +27,5 @@ module.exports = {
       .then(releases => res.status(200).json(releases))
       .catch(next);
     }
+
 }

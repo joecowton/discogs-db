@@ -5,4 +5,5 @@ export default [
   { label: 'Cat. Number', name: 'catno' },
   { label: 'Format', name: 'format' },
   { label: 'Discogs Link', name: 'resource_url' },
+  { label: 'Youtube Urls', name: 'video' },
 ]

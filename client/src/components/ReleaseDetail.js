@@ -15,6 +15,7 @@ class ReleaseDetail extends Component {
   mapImages(release) {
     return _.map(release.images, image => {
       return <image
+        key={image.uri}
         src={image.uri}
         height="200" width="200" padding="10"
         onClick={() => console.log("here")}></image>
@@ -42,7 +43,7 @@ class ReleaseDetail extends Component {
   renderRelease() {
     const { data } = this.props
       return (
-        <li className="list-group-item" key={data.id}>
+        <li key={data.id} className="list-group-item" >
           <h1>{this.mapArtists(data)}</h1>
           <h2>{data.title}</h2>
           <p>{this.mapImages(data)}</p>

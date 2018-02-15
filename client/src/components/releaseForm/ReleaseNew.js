@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form'
 import ReleaseForm from './ReleaseForm';
 import ReleaseFormReview from './ReleaseFormReview'
-
 
 class ReleaseNew extends Component {
   state = { showFormReview: false}
@@ -32,8 +31,4 @@ class ReleaseNew extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  console.log(state)
-}
-
-export default connect(mapStateToProps)(ReleaseNew);
+export default reduxForm({ form: 'releaseForm'})(ReleaseNew);
