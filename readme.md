@@ -22,3 +22,9 @@ $ npm test
 
 
 [![app](images/1.png)](https://youtu.be/PzY-jtUyrPc)
+
+![app](images/2.png)
+
+![app](images/3.png)
+
+![app](images/4.png)
