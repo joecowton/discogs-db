@@ -9,7 +9,11 @@ class ReleaseNew extends Component {
 
   renderContent() {
     if (this.state.showFormReview){
-      return <ReleaseFormReview />
+      return (
+        <ReleaseFormReview
+          onCancel={() => this.setState({ showFormReview: false}) }
+        />
+      )
     }
 
     return (

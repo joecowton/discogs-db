@@ -61,7 +61,6 @@ class ReleaseList extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log(state);
   return { data: state.data }
 }
 
