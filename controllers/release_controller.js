@@ -8,6 +8,21 @@ module.exports = {
       .catch(next);
   },
 
+  createRelease (req, res, next) {
+   const { title, artist, thumb, catno, format, resource_url, video } = req.body;
+   Release.create({
+     title,
+     artist,
+     thumb,
+     catno,
+     format,
+     resource_url,
+     videos: video.split(',')
+   })
+     .then(release => res.status(200).json(release))
+     .catch(next)
+  },
+
   show (req, res, next) {
     Release.find({ })
       .then(releases => res.status(200).json(releases))
@@ -22,7 +37,7 @@ module.exports = {
 
   showArtist (req, res, next) {
     const artist = req.params.artist
-    
+
     Release.find({ artist: { "$regex": artist, "$options": "i" } })
       .then(releases => res.status(200).json(releases))
       .catch(next);
