@@ -34,6 +34,7 @@ When a record is selected - by clicking on the avatar - a GET request is made to
 
 The final feature is page allowing users to contribute entries of their own to this list. Using redux form the data is then persisted to a form review page before the user confirms, sending a POST request to the database creating a new entry. This entry is then available in the list view.
 
+
 #### To run
 ```
 $ git clone https://github.com/joecowton/discogs-db
