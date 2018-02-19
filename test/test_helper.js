@@ -12,7 +12,12 @@ before((done) =>{
 });
 
 beforeEach((done) => {
-  mongoose.connection.collections.artists.drop(() =>{
-    done();
-  })
+  const { users, releases, artists } = mongoose.connection.collections;
+  users.drop(() => {
+    releases.drop(() => {
+        artists.drop(() => {
+          done();
+        })
+    })
+  });
 })
