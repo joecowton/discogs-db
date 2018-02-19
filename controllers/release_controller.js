@@ -2,12 +2,6 @@ const Release = require('../models/release_model')
 const requireLogin = require('../middlewares/require-login')
 
 module.exports = {
-  create(req, res, next) {
-    Release.create(req.body)
-      .then((release) => { res.status(200).json(release) })
-      .catch(next);
-  },
-
   createRelease (req, res, next) {
    const { title, artist, thumb, catno, format, resource_url, video } = req.body;
    Release.create({

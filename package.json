@@ -26,6 +26,7 @@
     "passport-google-oauth20": "^1.0.0",
     "postcss": "^6.0.17",
     "react-stripe-checkout": "^2.6.3",
+    "should": "^13.2.1",
     "stripe": "^5.4.0",
     "supertest": "^3.0.0",
     "webpack": "^3.11.0"

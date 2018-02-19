@@ -11,19 +11,5 @@ module.exports = (app) => {
   app.get('/api/releases/', ReleaseController.show)
   app.get('/api/releases/detail/:releaseId', ReleaseController.showDetail)
   app.get('/api/releases/:artist', ReleaseController.showArtist)
-
-  app.post('/api/releases', requireLogin, (req, res, next) => {
-    const { title, artist, thumb, catno, format, resource_url, video } = req.body;
-    Release.create({
-      title,
-      artist,
-      thumb,
-      catno,
-      format,
-      resource_url,
-      videos: video.split(',')
-    })
-      .then(release => res.status(200).json(release))
-      .catch(next)
-  })
+  app.post('/api/releases', requireLogin, ReleaseController.createRelease)
 }
