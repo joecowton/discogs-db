@@ -1,5 +1,7 @@
 # Discogs Reducer
 
+Heroku deployment: https://young-escarpment-46778.herokuapp.com/
+
 The idea behind this app was to provide a hassle free experience of listening to music on the popular record listing site Discogs. While the site is unparalleled in its catalogue of released music, recently the interface has become hugely crowded with adverts and links making using it a frustrating experience, especially if the user just wants to listen.
 
 Discogs Reducer removes the noise from the experience, providing the user with an uncluttered interface and nothing but the music and a hypothetical method of purchasing the music.
