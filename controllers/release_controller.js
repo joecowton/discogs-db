@@ -3,7 +3,7 @@ const requireLogin = require('../middlewares/require-login')
 
 module.exports = {
   createRelease (req, res, next) {
-   const { title, artist, thumb, catno, format, resource_url, video } = req.body;
+   const { title, artist, thumb, catno, format, resource_url, id } = req.body;
    Release.create({
      title,
      artist,
@@ -11,7 +11,7 @@ module.exports = {
      catno,
      format,
      resource_url,
-     videos: video.split(',')
+     id
    })
      .then(release => res.status(200).json(release))
      .catch(next)
