@@ -21,29 +21,30 @@ class ReleaseDetail extends Component {
 					height="200"
 					width="200"
 					padding="10"
-					onClick={() => console.log('here')}
 				/>
 			);
 		});
 	}
 
 	mapArtists(release) {
-		return _.map(release.artists, artist => {
+		const { artist } = release;
+		return _.map(artist, ({ name, join }) => {
 			return (
-				<div>
-					{artist.name} {artist.join}
+				<div key={name}>
+					{name} {join}
 				</div>
 			);
 		});
 	}
 
 	mapVideos(release) {
-		return _.map(release.videos, video => {
+		const { videos } = release;
+		return _.map(videos, ({ uri }) => {
 			return (
-				<div className="container" style={{ display: 'inline-grid' }}>
+				<div className="container" key={uri} style={{ display: 'inline-grid' }}>
 					<div className="row">
 						<div className="col-3">
-							<ReactPlayer url={video.uri} height="100" width="100%" />
+							<ReactPlayer url={uri} height="100" width="100%" />
 						</div>
 					</div>
 				</div>

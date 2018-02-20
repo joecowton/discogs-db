@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchArtist } from '../actions';
 import { connect } from 'react-redux';
 import Payments from './tools/Payments';
@@ -14,15 +14,7 @@ class ArtistDetail extends Component {
 
 	mapImages(release) {
 		return _.map(release.images, image => {
-			return (
-				<image
-					src={image.uri}
-					height="200"
-					width="200"
-					padding="10"
-					onClick={() => console.log('here')}
-				/>
-			);
+			return <image src={image.uri} height="200" width="200" padding="10" />;
 		});
 	}
 

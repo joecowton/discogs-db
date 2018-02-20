@@ -11,7 +11,7 @@ class Payments extends Component {
 		return (
 			<StripeCheckout
 				name="DISCOGS"
-				currency="gbp"
+				currency="GBP"
 				description={release.title}
 				amount={release.lowest_price * 100}
 				token={token => this.props.handleToken(token)}

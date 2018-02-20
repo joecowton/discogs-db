@@ -10,7 +10,6 @@ export default function(state = [], action) {
 	case FETCH_ARTIST:
 		return action.payload;
 	case SUBMIT_RELEASE:
-		console.log(action);
 		return action.payload;
 	case FETCH_RELEASE:
 		return { ...state, [action.payload.data.id]: action.payload.data };

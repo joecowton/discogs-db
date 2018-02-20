@@ -11,9 +11,7 @@ class ReleaseList extends Component {
 	}
 
 	renderArtists() {
-		console.log(artists);
 		return _.map(artists, ({ searchName, displayName }) => {
-			console.log(displayName);
 			return (
 				<a
 					key={displayName}

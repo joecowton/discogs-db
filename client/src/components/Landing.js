@@ -6,6 +6,7 @@ const Landing = () => {
 			<div style={{ display: 'flex', justifyContent: 'center' }}>
 				<img
 					src="http://livitysound.com/site/wp-content/uploads/2015/09/livitysound-logo.jpg"
+					alt="main"
 					align="middle"
 				/>
 			</div>
