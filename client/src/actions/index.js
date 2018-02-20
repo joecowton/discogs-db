@@ -29,7 +29,7 @@ export const fetchData = () => async dispatch => {
 };
 
 export const fetchArtist = artist => async dispatch => {
-	const res = await axios.get(`/api/releases/${artist}`);
+	const res = await axios.get(`/api/releases/${artist.searchName}`);
 
 	dispatch({ type: FETCH_ARTIST, payload: res.data });
 };
