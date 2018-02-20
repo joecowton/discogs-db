@@ -1,24 +1,43 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../actions';
+import artists from './artists';
 
 class ReleaseList extends Component {
 	componentWillMount() {
 		this.props.fetchData();
 	}
 
+	renderArtists() {
+		console.log(artists);
+		return _.map(artists, ({ searchName, displayName }) => {
+			console.log(displayName);
+			return (
+				<a
+					key={displayName}
+					className="dropdown-item"
+					onClick={() => this.props.fetchArtist({ searchName })}
+				>
+					{displayName}
+				</a>
+			);
+		});
+	}
+
 	renderData(data) {
+		const { thumb, title, label, artist, id } = data;
 		return (
-			<ul className="collection">
+			<ul className="collection" key={id}>
 				<li className="collection-item avatar">
-					<Link to={`/releases/${data.id}`}>
-						<img src={data.thumb} alt="" className="circle" />
+					<Link to={`/releases/${id}`}>
+						<img src={thumb} alt="" className="circle" />
 					</Link>
-					<span className="title">{data.artist}</span>
+					<span className="title">{artist}</span>
 					<p>
-						{data.title} <br />
-						{data.label}
+						{title} <br />
+						{label}
 					</p>
 				</li>
 			</ul>
@@ -33,11 +52,12 @@ class ReleaseList extends Component {
 				</div>
 			);
 		}
+
 		return (
 			<div>
-				<div class="dropdown center">
+				<div className="dropdown center">
 					<button
-						class="btn btn-secondary btn-lg btn-block dropdown-toggle black"
+						className="btn btn-secondary btn-lg btn-block dropdown-toggle black"
 						type="button"
 						id="dropdownMenuButton"
 						data-toggle="dropdown"
@@ -46,49 +66,8 @@ class ReleaseList extends Component {
 					>
 						ARTIST SELECTION
 					</button>
-					<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Kowton')}
-						>
-							Kowton
-						</a>
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Pev*')}
-						>
-							Peverelist
-						</a>
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Asusu')}
-						>
-							Asusu
-						</a>
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Hodge')}
-						>
-							Hodge
-						</a>
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Simo Cell')}
-						>
-							Simo Cell
-						</a>
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Forest')}
-						>
-							FDW
-						</a>
-						<a
-							class="dropdown-item"
-							onClick={() => this.props.fetchArtist('Various')}
-						>
-							Various
-						</a>
+					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						{this.renderArtists()}
 					</div>
 				</div>
 				<div className="release-list">
