@@ -34,24 +34,31 @@ The final feature is page allowing users to contribute entries of their own to t
 - Mongoose
 - MongoDB
 
+#### Successes
+- The app is extremely fast once loaded. By using React-Router to display components on a single page much of the lag caused in standard multiple page websites was removed.
+
+- The use of Redux and its connect feature made all data and action creators available directly to each component, this allowed great flexibility in design choices and saved passing values between components as props.
+
+- Effective use of Passport.js and Google OAuth makes the login process both secure and modern. This could be easily expanded to include login via Facebook, Twitter etc.
+
+- Use of ES6 syntax throughout makes code both cleaner and easier to read, e.g. using 'async' and 'await' in asynchronous functions.
+
+- Implementation of middleware on front end to ensure promises are resolved before data was passed to reducers, and on back end to ensure users are validated.
+
+- Learning how to use 'withRouter' properly was a game-changer when it came to combining Redux-Connect and React-Router.
+
 ### Evaluation and ideas for improvement
 - Overall the app does exactly what was intended, though at times the implementation could be cleaner.
 
-- The Redux form provides a fast and effective mechanism to enter new releases, though it would be good to also have facility to delete and update items. This would be easy to implement with a bit more time.
+- The Redux-Form provides a fast and effective mechanism to enter new releases, though it would be good to also have facility to delete and update items. This would be easy to implement with a bit more time.
 
-- I like the look of the site though I've minor styling gripes that could be ironed out, bits of spacing here and there aren't quite right.  
-
-- It would be nice to have a way of selecting releases beyond just the one label. Many design choices were influenced by the way in which Discogs API allows data access. By moving all data to the local database there would be more room for manoeuvre  
-
-- Testing is lacking in a couple of areas: both the Google OAuth flow and Stripe proved difficult processes to mock effectively. I found methods online but struggled to make anything work. This is something I want to look into further.
+- It would be nice to have a way of selecting releases beyond just the one label. Many design choices were influenced by the way in which Discogs API works. By moving all data to the local database there would be more room for manoeuvre, though this may be at odds with the purpose of the app.  
 
 - I made the fatal mistake of leaving the setup of React testing until too late in the project: by the time I attempted to install a test suite I'd used in a previous project the sheer number of version conflicts meant I spent an entire day on not getting it to work and simply ran out of time.
 
-- It's very much my intention to rectify this in future, but for now remains a sore point, for a more convincing example of React testing see [this project exploring ways of testing React and Redux](https://github.com/joecowton/react-tdd).
+- It's very much my intention to rectify this in future, for a more convincing example of React testing see [this project exploring ways of testing React and Redux](https://github.com/joecowton/react-tdd).
 
-- Learning how to use 'withRouter' properly was a game-changer when it came to combining Redux Connect and React-Router. If I'd understood this earlier in the project it might have changed some design decisions.
-
-- The Stripe payment method would benefit from being launched from somekind of shopping basket page. At this point though the focus would shift from a listening app into an e-commerce site which maybe isn't the point.
+- The Stripe payment method would benefit from being launched from some kind of shopping basket page. At this point though the focus would shift from a listening app into an e-commerce site which maybe isn't the point.
 
 #### To run
 ```
