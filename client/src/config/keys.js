@@ -1,4 +1,4 @@
 module.exports = {
-  discogsKey:'qeIeIQJgvnggcqHasaVV',
-  discogsSecret:'OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc'
-}
+	discogsKey: 'qeIeIQJgvnggcqHasaVV',
+	discogsSecret: 'OndCkhIDXkQruNLkDZLYjrPyaeQbYhlc'
+};

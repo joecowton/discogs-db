@@ -7,76 +7,87 @@ import { connect } from 'react-redux';
 import Payments from './tools/Payments';
 
 class ReleaseDetail extends Component {
-  componentDidMount() {
-    const { id } = this.props.match.params;
-    this.props.fetchRelease(id);
-  }
+	componentDidMount() {
+		const { id } = this.props.match.params;
+		this.props.fetchRelease(id);
+	}
 
-  mapImages(release) {
-    return _.map(release.images, image => {
-      return <image
-        key={image.uri}
-        src={image.uri}
-        height="200" width="200" padding="10"
-        onClick={() => console.log("here")}></image>
-    });
-  }
+	mapImages(release) {
+		return _.map(release.images, image => {
+			return (
+				<image
+					key={image.uri}
+					src={image.uri}
+					height="200"
+					width="200"
+					padding="10"
+					onClick={() => console.log('here')}
+				/>
+			);
+		});
+	}
 
-  mapArtists(release){return _.map(release.artists, artist => {
-      return <div>{artist.name} {artist.join}</div>
-    })
-  }
+	mapArtists(release) {
+		return _.map(release.artists, artist => {
+			return (
+				<div>
+					{artist.name} {artist.join}
+				</div>
+			);
+		});
+	}
 
-  mapVideos(release){return _.map(release.videos, video => {
-      return (
-        <div className="container" style={{ display: 'inline-grid'}}>
-          <div className="row">
-            <div className="col-3">
-              <ReactPlayer url={video.uri} height="100" width="100%" />
-            </div>
-          </div>
-         </div>
-      )
-    })
-  }
+	mapVideos(release) {
+		return _.map(release.videos, video => {
+			return (
+				<div className="container" style={{ display: 'inline-grid' }}>
+					<div className="row">
+						<div className="col-3">
+							<ReactPlayer url={video.uri} height="100" width="100%" />
+						</div>
+					</div>
+				</div>
+			);
+		});
+	}
 
-  renderRelease() {
-    const { data } = this.props
-      return (
-        <li key={data.id} className="list-group-item" >
-          <h1>{this.mapArtists(data)}</h1>
-          <h2>{data.title}</h2>
-          <p>{this.mapImages(data)}</p>
-          {this.mapVideos(data)}
-          <p><Payments release={data}/></p>
-        </li>
-      )
-  }
+	renderRelease() {
+		const { data } = this.props;
+		return (
+			<li key={data.id} className="list-group-item">
+				<h1>{this.mapArtists(data)}</h1>
+				<h2>{data.title}</h2>
+				<p>{this.mapImages(data)}</p>
+				{this.mapVideos(data)}
+				<p>
+					<Payments release={data} />
+				</p>
+			</li>
+		);
+	}
 
-  render() {
-    const { data } = this.props;
+	render() {
+		const { data } = this.props;
 
-    if (!data){
-      return (
-        <div className="progress white">
-          <div className="indeterminate green"></div>
-        </div>
-      )
-    }
+		if (!data) {
+			return (
+				<div className="progress white">
+					<div className="indeterminate green" />
+				</div>
+			);
+		}
 
-    return (
-      <div>
-        <Link to="/releases/all">Back to Index</Link>
-        <ul className="list-group center">
-          {this.renderRelease()}
-        </ul>
-      </div>
-    )
-  }
+		return (
+			<div>
+				<Link to="/releases/all">Back to Index</Link>
+				<ul className="list-group center">{this.renderRelease()}</ul>
+			</div>
+		);
+	}
 }
 
 function mapStateToProps({ data }, ownProps) {
-  return { data: data[ownProps.match.params.id] }
+	return { data: data[ownProps.match.params.id] };
 }
 
-export default connect(mapStateToProps, { fetchRelease } )(ReleaseDetail);
+export default connect(mapStateToProps, { fetchRelease })(ReleaseDetail);

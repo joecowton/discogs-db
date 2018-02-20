@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "lint": "eslint .",
     "server": "nodemon app.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
@@ -32,6 +33,9 @@
     "webpack": "^3.11.0"
   },
   "devDependencies": {
+    "eslint": "^4.18.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.7.0",
     "postcss-loader": "^2.1.0"
   }
 }
