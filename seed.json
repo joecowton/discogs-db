@@ -1,5 +1,5 @@
 {
-	"undefined": "mongodb://user:user@ds233238.mlab.com:33238/discogs-prod",
+	"undefined": "mongodb://user:user@ds227858.mlab.com:27858/discogs-dev",
 	"prod": "mongodb://user:user@ds233238.mlab.com:33238/discogs-prod",
-	"dev": "mongodb://user:user@ds233238.mlab.com:33238/discogs-prod"
+	"dev": "mongodb://user:user@ds227858.mlab.com:27858/discogs-dev"
 }
