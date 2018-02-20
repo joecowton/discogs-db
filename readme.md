@@ -35,22 +35,33 @@ The final feature is page allowing users to contribute entries of their own to t
 - MongoDB
 
 #### Successes
-- The app is extremely fast once loaded. By using React-Router to display components on a single page much of the lag caused in standard multiple page websites was removed.
+- Using Redux and its connect feature made all data and action creators available directly to each component.
 
-- The use of Redux and its connect feature made all data and action creators available directly to each component, this allowed great flexibility in design choices and saved passing values between components as props.
-
-- Effective use of Passport.js and Google OAuth makes the login process both secure and modern. This could be easily expanded to include login via Facebook, Twitter etc.
+- Use of ternary operators and switch statements to control header content
 
 - Use of ES6 syntax throughout makes code both cleaner and easier to read, e.g. using 'async' and 'await' in asynchronous functions.
+
+![app](images/7.png)
+
+- The app is extremely fast once loaded. By using React-Router to display components on a single page much of the lag caused in standard multiple page websites was removed.
+
+- Effective use of Passport.js and Google OAuth makes the login process both secure and modern. This could be easily expanded to include login via Facebook, Twitter etc.
 
 - Implementation of middleware on front end to ensure promises are resolved before data was passed to reducers, and on back end to ensure users are validated.
 
 - Learning how to use 'withRouter' properly was a game-changer when it came to combining Redux-Connect and React-Router.
 
-### Evaluation and ideas for improvement
-- Overall the app does exactly what was intended, though at times the implementation could be cleaner.
+- Use of Mongoose to simplify interactions with MongoDB.
 
-- The Redux-Form provides a fast and effective mechanism to enter new releases, though it would be good to also have facility to delete and update items. This would be easy to implement with a bit more time.
+![app](images/8.png)
+
+
+- Materialize library made simple styling easy but effective.
+
+### Evaluation and ideas for improvement
+- Stripe implementation needs finishing
+
+- The Redux-Form provides a fast and effective mechanism to enter new releases, though it would be good to also have facility to delete and update items. There are also too many criteria on the form.
 
 - It would be nice to have a way of selecting releases beyond just the one label. Many design choices were influenced by the way in which Discogs API works. By moving all data to the local database there would be more room for manoeuvre, though this may be at odds with the purpose of the app.  
 
