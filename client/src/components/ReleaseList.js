@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../actions';
-import artists from './artists';
+import artists from './artistFields';
 
 class ReleaseList extends Component {
 	componentWillMount() {
 		this.props.fetchData();
 	}
 
-	renderArtists() {
+	renderArtistDropdown() {
 		return _.map(artists, ({ searchName, displayName }) => {
 			return (
 				<a
@@ -65,7 +65,7 @@ class ReleaseList extends Component {
 						ARTIST SELECTION
 					</button>
 					<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-						{this.renderArtists()}
+						{this.renderArtistDropdown()}
 					</div>
 				</div>
 				<div className="release-list">
