@@ -28,7 +28,7 @@ module.exports = {
 	},
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: '[name].js'
+		filename: '[name].[chunkhash]js'
 	},
 	resolve: {
 		extensions: ['*', '.js', '.jsx']
@@ -48,7 +48,7 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'vendor'
+			name: ['vendor', 'manifest']
 		}),
 		new HtmlWebpackPlugin({
 			template: './public/index.html'
