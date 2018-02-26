@@ -29,9 +29,9 @@
 		"redux-thunk": "^2.2.0"
 	},
 	"scripts": {
-		"start": "react-scripts start",
 		"clean": "rimraf dist",
-		"build": "npm run clean && webpack --progress --color --watch --display-error-details",
+		"build":
+			"npm run clean && webpack --progress --color --watch --display-error-details",
 		"serve": "webpack-dev-server",
 		"test": "jest",
 		"test:watch": "npm test -- --watch",

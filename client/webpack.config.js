@@ -30,6 +30,15 @@ module.exports = {
 		path: path.join(__dirname, 'dist'),
 		filename: '[name].[chunkhash]js'
 	},
+	devServer: {
+		port: 3000,
+		proxy: {
+			'**': {
+				target: 'http://localhost:5000',
+				secure: false
+			}
+		}
+	},
 	resolve: {
 		extensions: ['*', '.js', '.jsx']
 	},
