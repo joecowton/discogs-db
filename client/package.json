@@ -23,11 +23,10 @@
 		"react-redux": "^5.0.6",
 		"react-router": "^4.2.0",
 		"react-router-dom": "^4.2.2",
-		"react-scripts": "1.1.1",
+		"react-scripts": "^1.1.1",
 		"react-stripe-checkout": "^2.6.3",
 		"redux": "^3.7.2",
 		"redux-form": "^7.2.3",
-		"redux-mock-store": "^1.5.1",
 		"redux-thunk": "^2.2.0"
 	},
 	"scripts": {
@@ -46,6 +45,7 @@
 		"file-loader": "^1.1.9",
 		"jest": "^22.4.2",
 		"materialize-loader": "^2.0.2",
+		"redux-mock-store": "^1.5.1",
 		"url-loader": "^0.6.2",
 		"webpack": "^3.0.0",
 		"webpack-cli": "^2.0.9",
