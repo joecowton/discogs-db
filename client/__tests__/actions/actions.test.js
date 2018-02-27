@@ -7,18 +7,18 @@ describe('actions', () => {
 	});
 
 	test('FETCH_DATA', () => {
-		expect(actions.FETCH_USER).toEqual('fetch_data');
+		expect(actions.FETCH_DATA).toEqual('fetch_data');
 	});
 
-	test('FETCH_USER', () => {
-		expect(actions.FETCH_USER).toEqual('fetch_user');
+	test('FETCH_RELEASE', () => {
+		expect(actions.FETCH_RELEASE).toEqual('fetch_release');
 	});
 
-	test('FETCH_USER', () => {
-		expect(actions.FETCH_USER).toEqual('fetch_user');
+	test('FETCH_ARTIST', () => {
+		expect(actions.FETCH_ARTIST).toEqual('fetch_artist');
 	});
 
-	test('FETCH_USER', () => {
-		expect(actions.FETCH_USER).toEqual('fetch_user');
+	test('SUBMIT_RELEASE', () => {
+		expect(actions.SUBMIT_RELEASE).toEqual('submit_release');
 	});
 });
