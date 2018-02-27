@@ -1,4 +1,5 @@
 # Discogs Reducer
+
 ### (Work in Progress)
 
 Heroku deployment: https://young-escarpment-46778.herokuapp.com/
@@ -21,57 +22,62 @@ The final feature is page allowing users to contribute entries of their own to t
 
 ### Technology used
 
-- Node-Express
-- React
-- React-Router
-- React-Player
-- Redux
-- Redux-Thunk
-- Redux-Form
-- Passport
-- Axios
-- Stripe
-- Mongoose
-- MongoDB
+* Node-Express
+* React
+* React-Router
+* React-Player
+* Redux
+* Redux-Thunk
+* Redux-Form
+* Webpack Dev Server
+* Passport
+* Axios
+* Stripe
+* Mongoose
+* MongoDB
 
 #### Successes
-- Using Redux and its connect feature made all data and action creators available directly to each component.
 
-- Use of ternary operators and switch statements to control header content
+* Using Redux and its connect feature made all data and action creators available directly to each component.
 
-- Use of ES6 syntax throughout makes code both cleaner and easier to read, e.g. using 'async' and 'await' in asynchronous functions.
+* Use of ternary operators and switch statements to control header content
+
+* Use of Webpack to split dependencies increase performance.
+
+* Use of ES6 syntax throughout makes code both cleaner and easier to read, e.g. using 'async' and 'await' in asynchronous functions.
 
 ![app](images/7.png)
 
-- The app is extremely fast once loaded. By using React-Router to display components on a single page much of the lag caused in standard multiple page websites was removed.
+* The app is extremely fast once loaded. By using React-Router to display components on a single page much of the lag caused in standard multiple page websites was removed.
 
-- Effective use of Passport.js and Google OAuth makes the login process both secure and modern. This could be easily expanded to include login via Facebook, Twitter etc.
+* Effective use of Passport.js and Google OAuth makes the login process both secure and modern. This could be easily expanded to include login via Facebook, Twitter etc.
 
-- Implementation of middleware on front end to ensure promises are resolved before data was passed to reducers, and on back end to ensure users are validated.
+* Implementation of middleware on front end to ensure promises are resolved before data was passed to reducers, and on back end to ensure users are validated.
 
-- Learning how to use 'withRouter' properly was a game-changer when it came to combining Redux-Connect and React-Router.
+* Learning how to use 'withRouter' properly was a game-changer when it came to combining Redux-Connect and React-Router.
 
-- Use of Mongoose to simplify interactions with MongoDB.
+* Use of Mongoose to simplify interactions with MongoDB.
 
 ![app](images/8.png)
 
-
-- Materialize library made simple styling easy but effective.
+* Materialize library made simple styling easy but effective.
 
 ### Evaluation and ideas for improvement
-- Stripe implementation needs finishing
 
-- The Redux-Form provides a fast and effective mechanism to enter new releases, though it would be good to also have facility to delete and update items. There are also too many criteria on the form.
+* Stripe implementation needs finishing
 
-- It would be nice to have a way of selecting releases beyond just the one label. Many design choices were influenced by the way in which Discogs API works. By moving all data to the local database there would be more room for manoeuvre, though this may be at odds with the purpose of the app.  
+* The Redux-Form provides a fast and effective mechanism to enter new releases, though it would be good to also have facility to delete and update items. There are also too many criteria on the form.
 
-- I made the fatal mistake of leaving the setup of React testing until too late in the project: by the time I attempted to install a test suite I'd used in a previous project the sheer number of version conflicts meant I spent an entire day on not getting it to work and simply ran out of time.
+* It would be nice to have a way of selecting releases beyond just the one label. Many design choices were influenced by the way in which Discogs API works. By moving all data to the local database there would be more room for manoeuvre, though this may be at odds with the purpose of the app.
 
-- It's very much my intention to rectify this in future, for a more convincing example of React testing see [this project exploring ways of testing React and Redux](https://github.com/joecowton/react-tdd).
+* I made the fatal mistake of leaving the setup of React testing until too late in the project: by the time I attempted to install a test suite I'd used in a previous project the sheer number of version conflicts meant I spent an entire day on not getting it to work and simply ran out of time.
 
-- The Stripe payment method would benefit from being launched from some kind of shopping basket page. At this point though the focus would shift from a listening app into an e-commerce site which maybe isn't the point.
+* It's very much my intention to rectify this in future, for a more convincing example of React testing see [this project exploring ways of testing React and Redux](https://github.com/joecowton/react-tdd).
+
+* The Stripe payment method would benefit from being launched from some kind of shopping basket page. At this point though the focus would shift from a listening app into an e-commerce site which maybe isn't the point.
 
 #### To run
+
 ```
 $ git clone https://github.com/joecowton/discogs-db
 $ cd discogs-db
@@ -83,18 +89,23 @@ $ npm run dev
 ```
 
 #### To test
+
 ```
 $ npm test
 ```
 
 ##### Video walk-through / list page (click to play)
+
 [![app](images/1.png)](https://youtu.be/PzY-jtUyrPc)
 
 ##### Record view page
+
 ![app](images/2.png)
 
 ##### Form page
+
 ![app](images/3.png)
 
 ##### Form confirmation page
+
 ![app](images/4.png)
