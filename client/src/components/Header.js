@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Header extends Component {
+export class Header extends Component {
 	renderContent() {
 		switch (this.props.auth) {
 		case null:

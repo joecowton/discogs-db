@@ -6,7 +6,7 @@ import { fetchRelease } from '../actions';
 import { connect } from 'react-redux';
 import Payments from './tools/Payments';
 
-class ReleaseDetail extends Component {
+export class ReleaseDetail extends Component {
 	componentDidMount() {
 		const { id } = this.props.match.params;
 		this.props.fetchRelease(id);
