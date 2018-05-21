@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders with authenticated props 1`] = `
+<div>
+  <nav
+    className="navbar navbar-inverse "
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="navbar-logo"
+      >
+        <Link
+          replace={false}
+          to="/"
+        >
+          Main
+        </Link>
+        <ul
+          className="right"
+        >
+          <div
+            key="3"
+          >
+            <li
+              key="1"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Add New
+              </Link>
+            </li>
+            <li
+              key="2"
+            >
+              <a
+                href="/api/logout"
+              >
+                Logout
+              </a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;
+
+exports[`<Header /> renders without authenticated props 1`] = `
+<div>
+  <nav
+    className="navbar navbar-inverse "
+  >
+    <div
+      className="container-fluid"
+    >
+      <div
+        className="navbar-logo"
+      >
+        <Link
+          replace={false}
+          to="/"
+        >
+          Main
+        </Link>
+        <ul
+          className="right"
+        >
+          <div
+            key="3"
+          >
+            <li
+              key="1"
+            >
+              <Link
+                replace={false}
+                to="/"
+              >
+                Add New
+              </Link>
+            </li>
+            <li
+              key="2"
+            >
+              <a
+                href="/api/logout"
+              >
+                Logout
+              </a>
+            </li>
+          </div>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

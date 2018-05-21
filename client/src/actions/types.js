@@ -1,5 +1,6 @@
-export const FETCH_USER = 'fetch_user';
-export const FETCH_DATA = 'fetch_data';
-export const FETCH_RELEASE = 'fetch_release';
-export const FETCH_ARTIST = 'fetch_artist';
-export const SUBMIT_RELEASE = 'submit_release';
+// @flow
+export const FETCH_USER: string = 'fetch_user';
+export const FETCH_DATA: string = 'fetch_data';
+export const FETCH_RELEASE: string = 'fetch_release';
+export const FETCH_ARTIST: string = 'fetch_artist';
+export const SUBMIT_RELEASE: string = 'submit_release';
