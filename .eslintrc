@@ -1,0 +1,48 @@
+{
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/flowtype",
+        "prettier/react"
+    ],
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "parser": "babel-eslint",
+    "plugins": [
+        "flowtype",
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": ["error", {
+            "singleQuote": true,
+            "tabWidth": 4,
+            "trailingComma": "es5"
+        }],
+
+        "import/extensions": ["error", "ignorePackages"],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "import/no-unresolved": ["error", { ignore: ["^react$"] }],
+        'jsx-a11y/anchor-is-valid': ['error', {
+            components: ['Link'],
+            specialLink: ['to'],
+            aspects: ['noHref', 'invalidHref', 'preferButton'],
+        }],
+        "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx"] }],
+        "react/sort-comp": [2, {
+            order: [
+                'type-annotations',
+                'static-methods',
+                'lifecycle',
+                'render',
+                'everything-else'
+            ]
+        }]
+    },
+    "globals": {
+        "$Subtype": true,
+        "SyntheticEvent": true,
+        "SyntheticInputEvent": true
+    }
+}
