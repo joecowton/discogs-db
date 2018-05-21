@@ -32,7 +32,7 @@ class ReleaseForm extends Component<Props> {
                         this.props.onReleaseSubmit
                     )}
                 >
-                    {this.renderFields()}
+                    {ReleaseForm.renderFields()}
                     <Link
                         to="/releases/all"
                         className="black btn-flat white-text"

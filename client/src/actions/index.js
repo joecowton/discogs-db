@@ -47,7 +47,6 @@ export const submitRelease = (values: any, history: any) => async (
     dispatch: Function
 ) => {
     const res = await axios.post('/api/releases', values);
-
     history.push('/releases/all');
     dispatch({ type: SUBMIT_RELEASE, payload: res });
 };
