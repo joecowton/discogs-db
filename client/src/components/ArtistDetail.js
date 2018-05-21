@@ -6,11 +6,12 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchArtist } from '../actions';
 
-type DataDefinition = {
+export type DataDefinition = {
     id: string,
     thumb?: string,
     artist?: string,
     label?: string,
+    title?: string,
 };
 
 type Props = {
@@ -50,7 +51,7 @@ class ArtistDetail extends Component<Props> {
         ));
     }
 
-    renderData(data) {
+    static renderData(data) {
         return (
             <ul key={data.id} className="collection">
                 <li className="collection-item avatar">
@@ -86,7 +87,7 @@ class ArtistDetail extends Component<Props> {
         return (
             <div>
                 <ul className="list-group center">
-                    {this.props.data.map(this.renderData)}
+                    {this.props.data.map(ArtistDetail.renderData)}
                 </ul>
             </div>
         );

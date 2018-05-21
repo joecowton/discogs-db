@@ -1,30 +1,21 @@
 // @flow
 
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as actions from '../actions';
 import artists from './artistFields';
+import type { DataDefinition } from './ArtistDetail';
 
-class ReleaseList extends Component {
-    componentWillMount() {
-        this.props.fetchData();
-    }
+type Props = {
+    fetchData: Function,
+    fetchArtist: Function,
+    data: Array<DataDefinition>,
+};
 
-    renderArtistDropdown() {
-        return _.map(artists, ({ searchName, displayName }) => (
-            <a
-                key={displayName}
-                className="dropdown-item"
-                onClick={() => this.props.fetchArtist({ searchName })}
-            >
-                {displayName}
-            </a>
-        ));
-    }
-
-    renderData(data) {
+class ReleaseList extends React.Component<Props> {
+    static renderData(data) {
         const { thumb, title, label, artist, id } = data;
         return (
             <ul className="collection" key={id}>
@@ -40,6 +31,10 @@ class ReleaseList extends Component {
                 </li>
             </ul>
         );
+    }
+
+    componentWillMount() {
+        this.props.fetchData();
     }
 
     render() {
@@ -72,10 +67,22 @@ class ReleaseList extends Component {
                     </div>
                 </div>
                 <div className="release-list">
-                    {this.props.data.map(this.renderData)}
+                    {this.props.data.map(ReleaseList.renderData)}
                 </div>
             </div>
         );
+    }
+
+    renderArtistDropdown() {
+        return _.map(artists, ({ searchName, displayName }) => (
+            <button
+                key={displayName}
+                className="dropdown-item"
+                onClick={() => this.props.fetchArtist({ searchName })}
+            >
+                {displayName}
+            </button>
+        ));
     }
 }
 

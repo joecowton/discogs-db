@@ -1,30 +1,37 @@
+// @flow
 import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import ReleaseForm from './ReleaseForm';
 import ReleaseFormReview from './ReleaseFormReview';
 
-class ReleaseNew extends Component {
-	state = { showFormReview: false };
+type State = {
+    showFormReview: boolean,
+};
 
-	renderContent() {
-		if (this.state.showFormReview) {
-			return (
-				<ReleaseFormReview
-					onCancel={() => this.setState({ showFormReview: false })}
-				/>
-			);
-		}
+type Props = {};
 
-		return (
-			<ReleaseForm
-				onReleaseSubmit={() => this.setState({ showFormReview: true })}
-			/>
-		);
-	}
+class ReleaseNew extends Component<Props, State> {
+    state = { showFormReview: false };
 
-	render() {
-		return <div>{this.renderContent()}</div>;
-	}
+    render() {
+        return (
+            <div>
+                {this.state.showFormReview ? (
+                    <ReleaseFormReview
+                        onCancel={() =>
+                            this.setState({ showFormReview: false })
+                        }
+                    />
+                ) : (
+                    <ReleaseForm
+                        onReleaseSubmit={() =>
+                            this.setState({ showFormReview: true })
+                        }
+                    />
+                )};
+            </div>
+        );
+    }
 }
 
 export default reduxForm({ form: 'releaseForm' })(ReleaseNew);

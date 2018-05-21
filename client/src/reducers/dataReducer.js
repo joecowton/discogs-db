@@ -1,11 +1,24 @@
+// @flow
 import {
     FETCH_DATA,
     FETCH_RELEASE,
     FETCH_ARTIST,
     SUBMIT_RELEASE,
 } from '../actions/types';
+import type { DataDefinition } from '../components/ArtistDetail';
 
-export default function(state: Array<Object> = [], action) {
+type State = {};
+
+type PayloadDefinition = {
+    data?: Array<DataDefinition>,
+};
+
+type ActionDefinition = {
+    payload?: Array<PayloadDefinition>,
+    type: String,
+};
+
+export default function(state: Array<State> = [], action: ActionDefinition) {
     switch (action.type) {
         case FETCH_DATA:
             return [...state, ...action.payload];

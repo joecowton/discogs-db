@@ -6,8 +6,13 @@ import ReleaseField from './ReleaseField';
 import formFields from './formFields';
 import validateLinks from '../../utils/validateLinks';
 
-class ReleaseForm extends Component {
-    renderFields() {
+type Props = {
+    handleSubmit: Function,
+    onReleaseSubmit: Function,
+};
+
+class ReleaseForm extends Component<Props> {
+    static renderFields() {
         return _.map(formFields, ({ label, name }) => (
             <Field
                 key={name}

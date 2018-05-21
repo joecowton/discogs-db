@@ -1,30 +1,32 @@
+// @flow
 import React, { Component } from 'react';
 
-class SearchBar extends Component {
-	constructor(props) {
-		super(props);
+type Props = {};
 
-		this.state = { term: '' };
-	}
+type State = {
+    term: String,
+};
 
-	render() {
-		return (
-			<div>
-				<button
-					className="btn btn-danger"
-					onClick={() => this.setState({ term: 'Pev' })}
-				>
-					Pev
-				</button>
-			</div>
-		);
-	}
+class SearchBar extends Component<Props, State> {
+    state = { term: '' };
 
-	onInputChange(term) {
-		console.log('here');
-		this.setState({ term });
-		this.props.onSearchTermChange(term);
-	}
+    render() {
+        return (
+            <div>
+                <button
+                    className="btn btn-danger"
+                    onClick={() => this.setState({ term: 'Pev' })}
+                >
+                    Pev
+                </button>
+            </div>
+        );
+    }
+
+    onInputChange(term) {
+        this.setState({ term });
+        this.props.onSearchTermChange(term);
+    }
 }
 
 export default SearchBar;
