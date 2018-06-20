@@ -6,7 +6,7 @@
     "jest": {
         "setupFiles": [
             "raf/polyfill",
-            "./src/tests/testSetup.js"
+            "./src/testSetup.js"
         ],
         "snapshotSerializers": [
             "enzyme-to-json/serializer"
@@ -23,6 +23,7 @@
     "dependencies": {
         "axios": "^0.17.1",
         "babel-preset-stage-2": "^6.24.1",
+        "cross-env": "^5.1.6",
         "lodash": "^4.17.5",
         "materialize-css": "^0.100.2",
         "react": "^16.2.0",
@@ -40,7 +41,7 @@
         "clean": "rimraf dist",
         "build": "npm run clean && webpack --progress --color --watch --display-error-details",
         "serve": "webpack-dev-server",
-        "test": "jest",
+        "test": "cross-env NODE_ENV=test jest --env=jsdom",
         "test:watch": "npm test -- --watch",
         "eject": "react-scripts eject"
     },
@@ -52,6 +53,7 @@
         "babel-preset-jest": "^22.4.3",
         "babel-preset-react": "^6.24.1",
         "enzyme": "^3.3.0",
+        "enzyme-adapter-react-16": "^1.1.1",
         "enzyme-to-json": "^3.3.1",
         "eslint-plugin-prettier": "^2.6.0",
         "fetch-mock": "^6.3.0",

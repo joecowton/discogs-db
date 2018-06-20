@@ -20,8 +20,9 @@
             "tabWidth": 4,
             "trailingComma": "es5"
         }],
-
         "import/extensions": ["error", "ignorePackages"],
+        "import/no-named-as-default": "off",
+        "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
         "import/no-unresolved": ["error", { ignore: ["^react$"] }],
         'jsx-a11y/anchor-is-valid': ['error', {

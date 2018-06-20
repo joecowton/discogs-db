@@ -21,7 +21,7 @@ type Props = {
     match: Object,
 };
 
-export class ReleaseDetail extends Component<Props> {
+class ReleaseDetail extends Component<Props> {
     static mapImages(release: Release) {
         return _.map(release.images, image => (
             <image

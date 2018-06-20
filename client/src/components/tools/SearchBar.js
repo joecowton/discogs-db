@@ -1,7 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 
-type Props = {};
+type Props = {
+    onSearchTermChange: Function,
+};
 
 type State = {
     term: String,
@@ -15,7 +17,7 @@ class SearchBar extends Component<Props, State> {
             <div>
                 <button
                     className="btn btn-danger"
-                    onClick={() => this.setState({ term: 'Pev' })}
+                    onClick={() => this.setState({ term })}
                 >
                     Pev
                 </button>
