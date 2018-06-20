@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import React, { Component } from 'react';
+import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
 import ReleaseField from './ReleaseField';
@@ -11,7 +11,7 @@ type Props = {
     onReleaseSubmit: Function,
 };
 
-class ReleaseForm extends Component<Props> {
+class ReleaseForm extends React.Component<Props> {
     static renderFields() {
         return _.map(formFields, ({ label, name }) => (
             <Field

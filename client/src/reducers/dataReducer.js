@@ -5,6 +5,7 @@ import {
     FETCH_ARTIST,
     SUBMIT_RELEASE,
 } from '../actions/types';
+
 import type { DataDefinition } from '../components/ArtistDetail';
 
 type State = {};
@@ -14,7 +15,7 @@ type PayloadDefinition = {
 };
 
 type ActionDefinition = {
-    payload?: Array<PayloadDefinition>,
+    payload?: string,
     type: String,
 };
 

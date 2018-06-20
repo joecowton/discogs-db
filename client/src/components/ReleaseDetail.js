@@ -21,16 +21,10 @@ type Props = {
     match: Object,
 };
 
-class ReleaseDetail extends Component<Props> {
+export class ReleaseDetail extends Component<Props> {
     static mapImages(release: Release) {
-        return _.map(release.images, image => (
-            <image
-                key={image.uri}
-                src={image.uri}
-                height="200"
-                width="200"
-                padding="10"
-            />
+        return _.map(release.images, ({ uri }) => (
+            <image key={uri} src={uri} height="200" width="200" padding="10" />
         ));
     }
 

@@ -2,16 +2,30 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { css } from 'glamor';
 
 type Props = {
     auth: string,
 };
 
+const style = css({
+    navbar: {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(5, 1fr)',
+        gridAutoRows: 'auto',
+        gridGap: '1em',
+        alignItems: 'center',
+        textAlign: 'center',
+        borderBottom: '4px solid black',
+        background: 'green',
+    },
+});
+
 export class Header extends Component<Props> {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-inverse ">
+                <nav className="navbar navbar-inverse" {...style}>
                     <div className="container-fluid">
                         <div className="navbar-logo">
                             <Link to={this.props.auth ? '/releases/all' : '/'}>
@@ -37,7 +51,7 @@ export class Header extends Component<Props> {
                 );
             default:
                 return [
-                    <div key="3">
+                    <div key="1">
                         <li key="1">
                             <Link to={this.props.auth ? '/releases/new' : '/'}>
                                 Add New

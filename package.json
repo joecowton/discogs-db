@@ -11,6 +11,8 @@
         "client": "npm run serve --prefix client",
         "dev": "concurrently \"npm run server\" \"npm run client\"",
         "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+        "precommit": "lint-staged",
+        "prepush": "npm run flow",
         "test": "NODE_ENV=test nodemon --exec 'mocha --timeout 10000'"
     },
     "keywords": [],
@@ -57,9 +59,6 @@
         "webpack": "^3.11.0"
     },
     "lint-staged": {
-        "packages/**/src/**/*.js": [
-            "eslint --fix",
-            "git add"
-        ]
+        "packages/**/src/**/*.js": ["eslint --fix", "git add"]
     }
 }

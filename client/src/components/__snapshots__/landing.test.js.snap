@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing should render the component 1`] = `
+<div
+  className="jumbotron center"
+>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <img
+      align="middle"
+      alt="main"
+      src="http://livitysound.com/site/wp-content/uploads/2015/09/livitysound-logo.jpg"
+    />
+  </div>
+</div>
+`;

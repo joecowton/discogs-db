@@ -1,5 +1,4 @@
 // @flow
-
 import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
@@ -9,20 +8,22 @@ import artists from './artistFields';
 import type { DataDefinition } from './ArtistDetail';
 
 type Props = {
-    fetchData: Function,
+    fetchData: () => Array<DataDefinition>,
     fetchArtist: Function,
     data: Array<DataDefinition>,
 };
 
-class ReleaseList extends React.Component<Props> {
-    static renderData(data) {
+export class ReleaseList extends React.Component<Props> {
+    static renderData(data: DataDefinition) {
         const { thumb, title, label, artist, id } = data;
         return (
             <ul className="collection" key={id}>
                 <li className="collection-item avatar">
-                    <Link to={`/releases/${id}`}>
-                        <img src={thumb} alt="" className="circle" />
-                    </Link>
+                    {id && (
+                        <Link to={`/releases/${id}`}>
+                            <img src={thumb} alt="" className="circle" />
+                        </Link>
+                    )}
                     <span className="title">{artist}</span>
                     <p>
                         {title} <br />
@@ -86,8 +87,8 @@ class ReleaseList extends React.Component<Props> {
     }
 }
 
-function mapStateToProps(state) {
-    return { data: state.data };
+function mapStateToProps({ data }) {
+    return { data };
 }
 
 export default connect(mapStateToProps, actions)(ReleaseList);

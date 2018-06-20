@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { fetchArtist } from '../actions';
 
 export type DataDefinition = {
-    id: string,
+    id?: string,
     thumb?: string,
     artist?: string,
     label?: string,
@@ -55,9 +55,16 @@ class ArtistDetail extends Component<Props> {
         return (
             <ul key={data.id} className="collection">
                 <li className="collection-item avatar">
-                    <Link to={`/release/${data.id}`}>
-                        <img src={data.thumb} alt="" className="circle" />
-                    </Link>
+                    {data &&
+                        data.id && (
+                            <Link to={`/release/${data.id}`}>
+                                <img
+                                    src={data.thumb}
+                                    alt=""
+                                    className="circle"
+                                />
+                            </Link>
+                        )}
                     <span className="title">{data.artist}</span>
                     <p>
                         {data.title} <br />

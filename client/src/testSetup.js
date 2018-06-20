@@ -1,8 +1,13 @@
-import Enzyme, { shallow, render, mount } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+const Enzyme = require('enzyme');
+const Adapter = require('enzyme-adapter-react-16');
+const { createSerializer } = require('enzyme-to-json');
 
 Enzyme.configure({ adapter: new Adapter() });
 
-global.shallow = shallow;
-global.render = render;
-global.mount = mount;
+expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+
+// Fail tests on any warning
+// eslint-disable-next-line no-console
+console.error = message => {
+    throw new Error(message);
+};

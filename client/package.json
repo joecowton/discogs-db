@@ -4,12 +4,13 @@
     "private": true,
     "main": "index.js",
     "jest": {
-        "setupFiles": [
-            "raf/polyfill",
-            "./src/testSetup.js"
-        ],
-        "snapshotSerializers": [
-            "enzyme-to-json/serializer"
+        "setupTestFrameworkScriptFile": "<rootDir>/src/testSetup.js",
+        "moduleNameMapper": {
+            ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "identity-obj-proxy"
+        },
+        "verbose": true,
+        "testPathIgnorePatterns": [
+            "<rootDir>/lib"
         ]
     },
     "proxy": {
@@ -24,6 +25,7 @@
         "axios": "^0.17.1",
         "babel-preset-stage-2": "^6.24.1",
         "cross-env": "^5.1.6",
+        "glamor": "^2.20.40",
         "lodash": "^4.17.5",
         "materialize-css": "^0.100.2",
         "react": "^16.2.0",
