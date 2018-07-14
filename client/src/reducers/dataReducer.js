@@ -6,20 +6,37 @@ import {
     SUBMIT_RELEASE,
 } from '../actions/types';
 
-import type { DataDefinition } from '../components/ArtistDetail';
-
-type State = {};
-
-type PayloadDefinition = {
-    data?: Array<DataDefinition>,
+type Data = {
+    id?: ?string,
 };
 
-type ActionDefinition = {
-    payload?: string,
-    type: String,
+type State = ?{
+    id: number,
+    text: string,
+    completed: boolean,
+    error: ?string,
 };
 
-export default function(state: Array<State> = [], action: ActionDefinition) {
+type Payload = {
+    type: string,
+    id: ?number,
+    text: ?string,
+    completed: ?boolean,
+    data?: ?Data,
+};
+
+type FetchDataAction = { type: typeof FETCH_DATA, payload: ?Payload };
+type FetchArtistAction = { type?: typeof FETCH_ARTIST, payload: ?Payload };
+type FetchReleaseAction = { type?: typeof FETCH_RELEASE, payload: ?Payload };
+type SubmitReleaseAction = { type?: typeof SUBMIT_RELEASE, payload: ?Payload };
+
+type Action =
+    | FetchDataAction
+    | FetchArtistAction
+    | SubmitReleaseAction
+    | FetchReleaseAction;
+
+export default function(state: State = [], action: Action) {
     switch (action.type) {
         case FETCH_DATA:
             return [...state, ...action.payload];
@@ -30,6 +47,7 @@ export default function(state: Array<State> = [], action: ActionDefinition) {
         case FETCH_RELEASE:
             return { ...state, [action.payload.data.id]: action.payload.data };
         default:
+            (action: empty);
             return state;
     }
 }
